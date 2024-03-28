@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import unittest
-from models import Book, User # Replace 'your_module_name' with the actual name of your module
+from app.models import Book, User # Replace 'your_module_name' with the actual name of your module
 
 class TestDatabaseOperations(unittest.TestCase):
     def setUp(self):

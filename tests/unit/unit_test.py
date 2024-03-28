@@ -1,5 +1,5 @@
 import unittest
-from models import Book, User, Order
+from app.models import Book, User, Order
 
 class TestBook(unittest.TestCase):
     def test_book_creation(self):

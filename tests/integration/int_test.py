@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import unittest
-from models import Book, User, Order
+from app.models import Book, User, Order
 class TestIntegration(unittest.TestCase):
     def setUp(self):
         # Set up database session
