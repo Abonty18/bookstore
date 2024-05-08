@@ -27,10 +27,10 @@ jobs:
     - name: Run tests
       run: |
         # Run unit tests
-        python -m unittest discover -s tests/unit -p '*_test.py'
+        python -m unittest discover -s tests/unit -p '*test_.py'
         
         # Run integration tests
-        python -m unittest discover -s tests/integration -p '*_test.py'
+        python -m unittest discover -s tests/integration -p '*test_.py'
         
         # Run regression tests
-        python -m unittest discover -s tests/regression -p '*_test.py'
+        python -m unittest discover -s tests/regression -p '*test_.py'
