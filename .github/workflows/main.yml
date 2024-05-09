@@ -1,6 +1,10 @@
 name: Python Unit, Integration, and Regression Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - '*' # Trigger on all branches
+  pull_request:
 
 jobs:
   test:
@@ -31,3 +35,15 @@ jobs:
     - name: Run regression tests
       run: |
         python -m unittest discover -s tests/regression -p '*test_*.py'
+
+    # Add steps for merging and deploying
+    - name: Merge branch into main
+      if: github.ref != 'refs/heads/main' # Only merge if not on main branch
+      run: |
+        git checkout main
+        git merge $GITHUB_REF
+        git push
+
+    - name: Deploy project
+      if: github.ref == 'refs/heads/main' # Only deploy if on main branch
+      # Add your deployment steps here
